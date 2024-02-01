@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "api"
+version = "0.1.0"
+description = ""
+authors = ["Leonardo local Kubuntu 22.04 <leonardochimirri94@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[tool.poetry.group.dev.dependencies]
+virtualenvwrapper = "^6.1.0"
+jedi = "^0.19.1"
+autopep8 = "^2.0.4"
+yapf = "^0.40.2"
+black = "^24.1.1"
+flake8 = "^7.0.0"
+setuptools = "^69.0.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
