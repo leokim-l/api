@@ -13,18 +13,4 @@ Retrieve data from the JSONPlaceholder - Free Fake REST API and store it in Mong
 3. Create a RESTful API with FastAPI
 Develop a FastAPI application to provide access to the mongo data. Include an endpoint to report the total number of posts and comments for each user.
 
-
-Task 2: Time Series Data Handling and API Development
-
-Turbine 1: https://nextcloud.turbit.com/s/GTbSwKkMnFrKC7A
-Turbine 2: https://nextcloud.turbit.com/s/G3bwdkrXx6Kmxs3
-
-Load time series data from the CSV files above into a MongoDB collection and make the data accessible through the FastAPI.
-
-1. Data Preparation and Loading into MongoDB
-Develop a python script to read the data from the CSV files and load it into a single MongoDB collection.
-
-2. Add FastAPI Endpoint
-Add an FastAPI endpoint that allows to retrieve the data based on turbine id and time ranges
-
 Please send us your code in a project file (e.g. GitHub link) and a short description (1-pager) of what you did in advance to our meeting.
