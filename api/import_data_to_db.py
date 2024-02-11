@@ -40,14 +40,14 @@ for i in range(len(links)):
             db[fn[i]].insert_one(file_tmp)
     del file_tmp
 
-# Here goes the code that counts posts and comments of each userId
-# num_posts = db.posts.count_documents({"userId": userId})
+# Code that counts posts and comments of each userId
 unique_usrs = db.users.distinct("id")
 counts_data = []
 for usr in unique_usrs:
     num_posts = db.posts.count_documents({"userId": usr})
-    usr_email = db.usrs.find_one({"email": usr})
-    num_comments = db.comments.count_documents({"email": usr_email})
+    usr_cursor = db.users.find_one({"id": usr})
+    num_comments = db.comments.count_documents({"email": usr_cursor["email"]})
+    print(usr_cursor["email"])
     counts_data.append(
         {"userId": usr, "numComments": num_comments, "numPosts": num_posts}
     )
