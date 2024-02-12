@@ -7,13 +7,3 @@
 # (6) Put stuff in the test folder, look at some test driven development stuff and understand what is important to be tested. Then put this stuff in readme so ppl know that, instead of/besides running main.py, they can run test1.py, test2.py, ..., tests1-5.py or whatever I learn when reading about TDD :D <3
 
 Check che setup.py con poetry non serve!
-
-Più interessante ora sarebbe:
-
-1) Uno script tipo: import_data_to_db.py
-che si connette al client, scarica, e popola il mio MongoDB database.
-
-2) Poi, ho un main che sono 4 righe in croce, sta tutto in helpers.py, o simili
-Lì dentro avrò tutte le definizioni di class e @app.get, e devo capire come queste funzioni siano note allo script main (https://realpython.com/python-application-layouts/)
-
-To', magari (se ha senso per python) fare un "model_classes.py" e "get_functions.py"
