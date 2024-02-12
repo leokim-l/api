@@ -20,10 +20,16 @@ It is assumed that poetry and docker-compose are installed on the system. Once t
 docker-compose up -d
 ```
 
-Then, import the data through:
+Then install the python dependencies, found in poetry.lock file, by running
 
 ```bash
-python3 api/import_data_to_db.py
+poetry install
+```
+
+and import the data through
+
+```bash
+poetry run python import_data_to_db.py
 ```
 
 Run the API by executing, from within the api/ folder:
