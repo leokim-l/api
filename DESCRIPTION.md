@@ -15,3 +15,5 @@ The structure is very simple, with a docker-compose file (`docker-compose.yml`) 
 2. The point mentioned above in 1., namely not generating extra data for the `/counts` endpoint.
 
 3. There is a small error in the task, namely there is no connection between comments and users, it is simply not a feature of the dataset. Thus counting comments per user, done here via email, always gives 0. One could count comments per post.
+
+4. Add tests.
