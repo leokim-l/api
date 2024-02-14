@@ -26,7 +26,7 @@ Then install the python dependencies, found in poetry.lock file, by running
 poetry install
 ```
 
-and import the data through
+and from the directory api/ import the data through
 
 ```bash
 poetry run python import_data_to_db.py
@@ -49,4 +49,3 @@ Also, at those endpoints, one can query by id, for instance:
 http://127.0.0.1:8000/posts/23
 
 will show the "post" with id 23, if it exists. 
-

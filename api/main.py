@@ -14,7 +14,7 @@ client = MongoClient(
 
 db = client["jsonplaceholder"]
 
-# Expose with FastAPI
+# Expose with FastAPI, define GET methods for all endpoints
 app = FastAPI()
 
 
@@ -23,7 +23,7 @@ def shutdown_event():
     client.close()
 
 
-# Endpoints for whole folders first
+# Endpoints for whole directories first
 @app.get("/posts", response_model=List[Post])
 async def show_posts():
     allposts = db.posts.find({})

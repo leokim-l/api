@@ -6,7 +6,7 @@ from urllib.request import urlretrieve
 import numpy as np
 
 # ==========================================================================
-# Setup
+# Setup, plus some manipulation to automatically download from link
 url = "https://jsonplaceholder.typicode.com"
 local_db = "/home/leonardo/Desktop/programs/turbit/api/database/"
 data_src = ["posts", "comments", "albums", "photos", "todos", "users"]
@@ -16,7 +16,7 @@ data = bs4.BeautifulSoup(req.text, "html.parser")
 links = [
     url + lst.get("href") for lst in data.find_all("a") if lst.get("href") in data_src
 ]
-links = list(np.unique(np.array(links)))  # list(set(links))  # unique
+links = list(np.unique(np.array(links)))
 fn = [name.split("/")[-1] for name in links]
 
 # ==========================================================================
@@ -34,6 +34,8 @@ for i in range(len(links)):
     urlretrieve(links[i], fname)
     with open(fname, "r") as myfile:
         file_tmp = json.load(myfile)
+
+        # Insert data in collection, one per folder
         if isinstance(file_tmp, list):
             db[fn[i]].insert_many(file_tmp)
         else:
@@ -47,7 +49,6 @@ for usr in unique_usrs:
     num_posts = db.posts.count_documents({"userId": usr})
     usr_cursor = db.users.find_one({"id": usr})
     num_comments = db.comments.count_documents({"email": usr_cursor["email"]})
-    print(usr_cursor["email"])
     counts_data.append(
         {"userId": usr, "numComments": num_comments, "numPosts": num_posts}
     )
